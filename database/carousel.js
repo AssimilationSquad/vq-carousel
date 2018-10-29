@@ -18,7 +18,7 @@ const carouselSchema = new mongoose.Schema({
 
 const Carousel = mongoose.model('Carousel', carouselSchema);
 
-const getImgs = (callback) => {
+const getAllImgs = (callback) => {
   Carousel.find({}, (err, data) => {
     if (err) {
       console.log(err);
@@ -30,5 +30,18 @@ const getImgs = (callback) => {
   });
 };
 
+const getImgSet = (id, callback) => {
+  Carousel.find({ _id: id }, (err, data) => {
+    if (err) {
+      console.log(err);
+      callback(err);
+    } else {
+      console.log(data);
+      callback(null, data);
+    }
+  });
+};
+
 module.exports = Carousel;
-module.exports.getImgs = getImgs;
+module.exports.getAllImgs = getAllImgs;
+module.exports.getImgSet = getImgSet;
