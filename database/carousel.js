@@ -3,6 +3,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const carouselSchema = new mongoose.Schema({
+  _id: Number,
   title: String,
   imgs: [
     {
@@ -17,7 +18,7 @@ const carouselSchema = new mongoose.Schema({
 
 const Carousel = mongoose.model('Carousel', carouselSchema);
 
-const getCarouselImgs = (callback) => {
+const getImgs = (callback) => {
   Carousel.find({}, (err, data) => {
     if (err) {
       console.log(err);
@@ -29,6 +30,5 @@ const getCarouselImgs = (callback) => {
   });
 };
 
-
-
 module.exports = Carousel;
+module.exports.getImgs = getImgs;

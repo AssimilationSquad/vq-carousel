@@ -78,15 +78,20 @@ const sampleData = [
     ],
   },
 ];
+console.log(Carousel);
 
 const insertSampleImgs = function() {
   const randomInt = () => {
     return Math.floor(Math.random() * Math.floor(3))
   };
-  for (var i = 0; i < 2; i++) {
-    Carousel.create(sampleData[randomInt()])
-    .then(() => db.disconnect());
+  var listArr = [];
+  for (var i = 1; i < 101; i++) {
+    var newListing = Object.assign({}, sampleData[randomInt()]);
+    Object.assign(newListing, {_id: i});
+    listArr.push(newListing);
   }
+  Carousel.create(listArr)
+    .then(() => db.close());
 };
 
 insertSampleImgs();
