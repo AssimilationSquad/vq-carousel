@@ -19,7 +19,7 @@ app.get('/carousel', function(req, res) {
 });
 
 //Get images for target ID.
-app.get('/carousel/:id', function(req, res) {
+app.get('/rooms/:id', function(req, res) {
   Carousel.getImgSet(req.params.id, (err, data) => {
     if (err) {
       res.status(500).send('Server error!');
