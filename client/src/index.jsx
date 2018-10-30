@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Carousel from './components/Carousel.jsx';
+import Slideshow from './components/Slideshow.jsx';
 
-ReactDOM.render(<Carousel />, document.getElementById('carousel'));
+ReactDOM.render(<Slideshow />, document.getElementById('carousel'));
 
