@@ -7,6 +7,8 @@ const Carousel = require('../database/carousel.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static(__dirname + '../client/dist/'));
+
 //Get all images in database.
 app.get('/carousel', function(req, res) {
   Carousel.getAllImgs((err, data) => {
@@ -19,7 +21,7 @@ app.get('/carousel', function(req, res) {
 });
 
 //Get images for target ID.
-app.get('/carousel/:id', function(req, res) {
+app.get('/rooms/:id', function(req, res) {
   Carousel.getImgSet(req.params.id, (err, data) => {
     if (err) {
       res.status(500).send('Server error!');
