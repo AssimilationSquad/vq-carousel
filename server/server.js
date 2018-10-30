@@ -3,11 +3,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3004;
 const Carousel = require('../database/carousel.js');
+const path = require('path');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(__dirname + '../client/dist/'));
+app.use(express.static(path.join(__dirname, '../client/dist/')));
 
 //Get all images in database.
 app.get('/carousel', function(req, res) {

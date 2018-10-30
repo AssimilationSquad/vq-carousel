@@ -78,7 +78,7 @@ const sampleData = [
     ],
   },
 ];
-console.log(Carousel);
+
 
 const insertSampleImgs = function() {
   const randomInt = () => {
