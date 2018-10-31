@@ -1,4 +1,5 @@
 import React from 'react';
+import Slideshow from './Slideshow.jsx';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -10,8 +11,12 @@ class Modal extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <Slideshow />
+      </div>
     )
   }
 
 }
+
+export default Modal;

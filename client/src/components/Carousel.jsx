@@ -8,6 +8,13 @@ class Carousel extends React.Component {
     }
     // function bindings
   }
+  render() {
+    return (
+      <div classname="carousel">
+        
+      </div>
+    );
+  }
 }
 
 export default Carousel;
