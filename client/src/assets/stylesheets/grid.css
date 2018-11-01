@@ -1,17 +1,21 @@
 .gridcontainer {
   display: grid;
-  height: 100%;
+  height: 400px;
   width: 100%;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 1px 1px;
+  grid-gap: 2px 2px;
   grid-template-areas: "mainImage image1 image2"  "mainImage image3 image4";
+  background-color: #484848;
 }
 
 .mainImage {
   grid-area: mainImage; 
   object-fit: contain;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;  
 }
 
 .image1 {
@@ -37,3 +41,13 @@
   object-fit: contain;
   overflow: hidden;
 }
+
+.img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+/* background: url(https://s3-us-west-1.amazonaws.com/lairbnb-carousel/10.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center; */
