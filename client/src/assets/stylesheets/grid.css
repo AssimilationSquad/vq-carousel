@@ -1,28 +1,39 @@
 .gridcontainer {
   display: grid;
   height: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "mainImage mainImage image1 image2" "mainImage mainImage image3 image4";
+  grid-template-areas: "mainImage image1 image2"  "mainImage image3 image4";
 }
 
 .mainImage {
   grid-area: mainImage; 
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .image1 {
   grid-area: image1;
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .image2 {
   grid-area: image2; 
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .image3 {
   grid-area: image3; 
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .image4 {
   grid-area: image4; 
+  object-fit: contain;
+  overflow: hidden;
 }

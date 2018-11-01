@@ -12,10 +12,16 @@ class Grid extends React.Component {
       image3: '',
       image4: '',
     }
+    //function bindings go here
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log('Hey! Listen!');
   }
 
   componentDidMount() {
-    fetch("http://localhost:3004/rooms/16")
+    fetch("http://localhost:3004/api/rooms/16")
       .then(res => res.json())
       .then(
         (result) => {
@@ -36,19 +42,19 @@ class Grid extends React.Component {
     return (
       <div className={gridStyles.gridcontainer}>
         <div className={gridStyles.mainImage}>
-          <img src={this.state.mainImage}></img>
+          <img src={this.state.mainImage} onClick={this.handleClick} ></img>
         </div>
         <div className={gridStyles.image1}>
-          <img src={this.state.image1}></img>
+          <img src={this.state.image1} onClick={this.handleClick} ></img>
         </div>
         <div className={gridStyles.image2}>
-          <img src={this.state.image2}></img>
+          <img src={this.state.image2} onClick={this.handleClick} ></img>
         </div>
         <div className={gridStyles.image3}>
-          <img src={this.state.image3}></img>
+          <img src={this.state.image3} onClick={this.handleClick} ></img>
         </div>
         <div className={gridStyles.image4}>
-          <img src={this.state.image4}></img>
+          <img src={this.state.image4} onClick={this.handleClick} ></img>
         </div>
       </div>    
     );

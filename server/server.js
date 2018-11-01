@@ -22,7 +22,7 @@ app.get('/carousel', function(req, res) {
 });
 
 //Get images for target ID.
-app.get('/rooms/:id', function(req, res) {
+app.get('/api/rooms/:id', function(req, res) {
   Carousel.getImgSet(req.params.id, (err, data) => {
     if (err) {
       res.status(500).send('Server error!');
@@ -35,3 +35,6 @@ app.get('/rooms/:id', function(req, res) {
 app.listen(port, () => {
   console.log(`Listening for Carousel Images on ${port}`);
 });
+
+//api/rooms/:id to serve my API
+//rooms/:id to serve HTML
