@@ -1,6 +1,5 @@
 import React from 'react';
-import Modal from './Modal.jsx';
-import gridStyles from '../assets/stylesheets/grid.css';
+import styles from '../assets/stylesheets/grid.css';
 
 class Grid extends React.Component {
   constructor(props) {
@@ -53,44 +52,70 @@ class Grid extends React.Component {
   
   render() {
     const mainImgStyle = {
-      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[0].imgURL})` : `url(${this.state.imgs[0].imgURL})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: `no-repeat`,
-    }
-    const image1 = {
-      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[1].imgURL})` : `url(${this.state.imgs[1].imgURL})`,
+      backgroundImage: `url(${this.state.imgs[0].imgURL})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: `no-repeat`,
     }
 
-    const image2 = {
-      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[2].imgURL})` : `url(${this.state.imgs[2].imgURL})`,
+    const image1 = {
+      backgroundImage: `url(${this.state.imgs[1].imgURL})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: `no-repeat`,
+      width: '100%',
+      height: '100%',
+    }
+
+    const image2 = {
+      backgroundImage: `url(${this.state.imgs[2].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+      width: '100%',
+      height: '100%',
     }
     const image3 = {
-      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[3].imgURL})` : `url(${this.state.imgs[3].imgURL})`,
+      backgroundImage: `url(${this.state.imgs[3].imgURL})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: `no-repeat`,
+      width: '100%',
+      height: '100%',
     }
     const image4 = {
-      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[4].imgURL})` : `url(${this.state.imgs[4].imgURL})`,
+      backgroundImage: `url(${this.state.imgs[4].imgURL})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: `no-repeat`,
+      width: '100%',
+      height: '100%',
     }
+    const overflow = {
+      overflow: 'hidden',
+      width: '100%',
+      height: '100%',
+    }
+
     return (
-      <div className={gridStyles.gridcontainer}>
-        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.mainImage} style={mainImgStyle} ></div>
-        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image1} style={image1} ></div>
-        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image2} style={image2} ></div>
-        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image3} style={image3} ></div>
-        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image4} style={image4} ></div>
-      </div>    
+      <div className={styles['word']}>
+        <div  className={styles['gridcontainer']}>
+          <div className={styles['mainImage']} style={mainImgStyle} ></div>
+          <div className={styles.image1} style={overflow}>
+            <div style={image1} ></div>
+          </div>
+          <div className={styles.image2} style={overflow}>
+            <div style={image2} ></div>
+          </div>
+          <div className={styles.image3} style={overflow}>
+            <div style={image3} ></div>
+          </div>
+          <div className={styles.image4} style={overflow}>
+            <div style={image4} ></div>
+          </div>
+
+        </div>    
+      </div>
     );
   }
 }
