@@ -18,66 +18,66 @@
   grid-area: mainImage; 
   object-fit: contain;
   overflow: hidden;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 }
 
 .mainImage:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .image1 {
   grid-area: image1;
   object-fit: contain;
   overflow: hidden;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 }
 
 .image1:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .image2 {
   grid-area: image2; 
   object-fit: contain;
   overflow: hidden;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 }
 
 .image2:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .image3 {
   grid-area: image3; 
   object-fit: contain;
   overflow: hidden;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 }
 
 .image3:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .image4 {
   grid-area: image4; 
   object-fit: contain;
   overflow: hidden;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 }
 
 .image4:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .img {
   width: 100%;
 }
 
-.word:hover div:not(:hover) {
+.dark:hover div:not(:hover) {
   filter: brightness(75%);
 }

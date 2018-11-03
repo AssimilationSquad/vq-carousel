@@ -56,6 +56,8 @@ class Grid extends React.Component {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: `no-repeat`,
+      width: '100%',
+      height: '100%',
     }
 
     const image1 = {
@@ -94,24 +96,25 @@ class Grid extends React.Component {
     const overflow = {
       overflow: 'hidden',
       width: '100%',
-      height: '100%',
     }
 
     return (
-      <div className={styles['word']}>
-        <div  className={styles['gridcontainer']}>
-          <div className={styles['mainImage']} style={mainImgStyle} ></div>
-          <div className={styles.image1} style={overflow}>
-            <div style={image1} ></div>
+      <div className={styles.dark}>
+        <div  className={styles.gridcontainer}>
+          <div className={styles.mainImage} style={overflow}>
+            <div style={mainImgStyle} ></div>
           </div>
-          <div className={styles.image2} style={overflow}>
-            <div style={image2} ></div>
+          <div style={overflow}>
+            <div className={styles.image1} style={image1} ></div>
           </div>
-          <div className={styles.image3} style={overflow}>
-            <div style={image3} ></div>
+          <div style={overflow}>
+            <div className={styles.image2} style={image2} ></div>
           </div>
-          <div className={styles.image4} style={overflow}>
-            <div style={image4} ></div>
+          <div style={overflow}>
+            <div className={styles.image3} style={image3} ></div>
+          </div>
+          <div style={overflow}>
+            <div className={styles.image4} style={image4} ></div>
           </div>
 
         </div>    
