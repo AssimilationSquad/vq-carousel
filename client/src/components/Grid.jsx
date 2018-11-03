@@ -13,13 +13,28 @@ class Grid extends React.Component {
         {imgURL:''},
         {imgURL:''},
       ],
+      hovering: false,
     }
     //function bindings go here
     this.handleClick = this.handleClick.bind(this);
+    this.handleMouseOver = this.handleMouseOver.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
   handleClick() {
     console.log('Hey! Listen!');
+  }
+
+  handleMouseOver() {
+    this.setState({
+      hovering: true,
+    })
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      hovering: false,
+    })
   }
 
   componentDidMount() {
@@ -35,15 +50,46 @@ class Grid extends React.Component {
       )
     
   }
-
+  
   render() {
+    const mainImgStyle = {
+      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[0].imgURL})` : `url(${this.state.imgs[0].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+    }
+    const image1 = {
+      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[1].imgURL})` : `url(${this.state.imgs[1].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+    }
+
+    const image2 = {
+      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[2].imgURL})` : `url(${this.state.imgs[2].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+    }
+    const image3 = {
+      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[3].imgURL})` : `url(${this.state.imgs[3].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+    }
+    const image4 = {
+      backgroundImage: this.state.hovering ? `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.state.imgs[4].imgURL})` : `url(${this.state.imgs[4].imgURL})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: `no-repeat`,
+    }
     return (
       <div className={gridStyles.gridcontainer}>
-        <div className={gridStyles.mainImage} style={{background: `url(${this.state.imgs[0].imgURL}) center scroll/cover no-repeat`}} ></div>
-        <div className={gridStyles.image1} style={{background: `url(${this.state.imgs[1].imgURL}) center scroll/cover no-repeat`}} ></div>
-        <div className={gridStyles.image2} style={{background: `url(${this.state.imgs[2].imgURL}) center scroll/cover no-repeat`}} ></div>
-        <div className={gridStyles.image3} style={{background: `url(${this.state.imgs[3].imgURL}) center scroll/cover no-repeat`}} ></div>
-        <div className={gridStyles.image4} style={{background: `url(${this.state.imgs[4].imgURL}) center scroll/cover no-repeat`}} ></div>
+        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.mainImage} style={mainImgStyle} ></div>
+        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image1} style={image1} ></div>
+        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image2} style={image2} ></div>
+        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image3} style={image3} ></div>
+        <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} className={gridStyles.image4} style={image4} ></div>
       </div>    
     );
   }
