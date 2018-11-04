@@ -30,7 +30,7 @@ class Slideshow extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3004/rooms/16")
+    fetch("http://localhost:3004/api/rooms/16")
       .then(res => res.json())
       .then(
         (result) => {
