@@ -104,16 +104,16 @@ class Grid extends React.Component {
           <div className={styles.mainImage} style={overflow}>
             <div style={mainImgStyle} ></div>
           </div>
-          <div style={overflow}>
+          <div className="overflow" style={overflow}>
             <div className={styles.image1} style={image1} ></div>
           </div>
-          <div style={overflow}>
+          <div className="overflow" style={overflow}>
             <div className={styles.image2} style={image2} ></div>
           </div>
-          <div style={overflow}>
+          <div className="overflow" style={overflow}>
             <div className={styles.image3} style={image3} ></div>
           </div>
-          <div style={overflow}>
+          <div className="overflow" style={overflow}>
             <div className={styles.image4} style={image4} ></div>
           </div>
 
