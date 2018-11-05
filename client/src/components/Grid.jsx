@@ -37,16 +37,18 @@ class Grid extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3004/api/rooms/16")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            imgs: result[0].imgs,
-          })
-        }
-
-      )
+    const url = window.location.pathname;
+    if (url !== '/') {
+        fetch(`http://localhost:3004/api${url}`)
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                imgs: result[0].imgs,
+              })
+            }
+          )
+    }
     
   }
   
