@@ -46,6 +46,10 @@ const sampleData = [
         imgURL: 'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/9.jpg',
         imgDescription: 'This is another room.',
       },
+      {
+        imgURL: 'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/hohenzollernCastle.jpg',
+        imgDescription: 'This is the exterior.',
+      },
     ],
   },
   {
