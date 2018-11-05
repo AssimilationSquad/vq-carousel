@@ -10,6 +10,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, '../client/dist/')));
 
+app.use('/rooms', express.static(path.join(__dirname, '../client/dist/')));
+
+app.get('/rooms/:id', (req, res) => {
+  res.status(200);
+  res.sendFile(path.join(__dirname, '../client/dist/'));
+});
+
 //Get all images in database.
 app.get('/carousel', function(req, res) {
   Carousel.getAllImgs((err, data) => {
