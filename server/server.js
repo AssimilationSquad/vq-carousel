@@ -8,19 +8,19 @@ const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static(path.join(__dirname, '../client/dist/')));
+
+app.use('/rooms', express.static(path.join(__dirname, '../client/dist/')));
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.use(express.static(path.join(__dirname, '../client/dist/')));
-
-app.use('/rooms', express.static(path.join(__dirname, '../client/dist/')));
-
 app.get('/rooms/:id', (req, res) => {
   res.status(200);
-  res.sendFile(path.join(__dirname, '../client/dist/'));
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 //Get all images in database.
@@ -49,5 +49,3 @@ app.listen(port, () => {
   console.log(`Listening for Carousel Images on ${port}`);
 });
 
-//api/rooms/:id to serve my API
-//rooms/:id to serve HTML
