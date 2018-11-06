@@ -39,7 +39,7 @@ class Grid extends React.Component {
   componentDidMount() {
     const url = window.location.pathname;
     if (url !== '/') {
-        fetch(`http://localhost:3004/api${url}`)
+        fetch(`http://127.0.0.1:3004/api${url}`)
           .then(res => res.json())
           .then(
             (result) => {
