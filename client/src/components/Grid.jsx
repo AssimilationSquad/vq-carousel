@@ -6,11 +6,11 @@ class Grid extends React.Component {
     super(props);
     this.state = {
       imgs: [
-        {imgURL:''},
-        {imgURL:''},
-        {imgURL:''},
-        {imgURL:''},
-        {imgURL:''},
+        {imgURL:'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/21.jpg'},
+        {imgURL:'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/22.jpg'},
+        {imgURL:'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/23.jpg'},
+        {imgURL:'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/24.jpg'},
+        {imgURL:'https://s3-us-west-1.amazonaws.com/lairbnb-carousel/25.jpg'},
       ],
       hovering: false,
     }
